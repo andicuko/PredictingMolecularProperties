@@ -4,13 +4,13 @@ In this repository I am collecting my Jupyter notebooks for the [Predicting Mole
 Here I am collecting only my final results leaving out all things done during the understanding phase of the project and all things that did not work.
 
 The Data availabe for the competition can be found [here](https://www.kaggle.com/c/champs-scalar-coupling/data)
-Among all the data available I have used only train.csv, test.csv files and I extracted features from the structure.zip (with xyz atoms coordinates for each molecule.
+Among all the data available I have used only train.csv, test.csv files and I extracted features from the structure.zip (with xyz atoms coordinates for each molecule).
 
 # The problem
-We are required to predic the coupling of nuclear magnetic moment of pairs of atoms in a set of molecules. More precicely, given the ID of the atoms pair within a certain molecule we need to provide a prediction of the scalar coupling constant.
+We are asked to predic the coupling of nuclear magnetic moment of pairs of atoms in a set of molecules. More precisely, given the ID of the atoms pair within a certain molecule we need to provide a prediction of the scalar coupling constant.
 
 # A bit of domain knowledge
-The coupling between nuclear magnetic moments of two atoms (J-coupling) depends from atoms features (Z, electronegativity, charge etc) and from environmental features (atoms distance, bonds between atoms, substituent groups atoms are bounded with etc.) For more details check "Understanding NMR Spectroscopy" of James Keeler one of the reference books for NMR spectroscopy.
+The coupling between nuclear magnetic moments of two atoms (J-coupling) depends from atoms features (Z, electronegativity, charge etc) and from environmental features (atoms distance, bonds between atoms, substituent groups atoms are bounded with etc.) For more details check "Understanding NMR Spectroscopy" of James Keeler, one of the reference books for NMR spectroscopy.
 
 # My solution
 The idea is to manually extract a series of features for all atoms pair in each molecule for all the molecules. I am going to use [rdkit](https://www.rdkit.org/) to process the moleculecular structure. In order to use rdkit I changed the molecule's file format from .xyz to .mol using [xyz2mol](https://github.com/jensengroup/xyz2mol) script. I had to further change some of the files to sdf format due to problems in extracting structure from mol. Afterwards create a gradient boosting model with all hand extracted and generated features to capture the most relevant factors affecting the J-coupling.
