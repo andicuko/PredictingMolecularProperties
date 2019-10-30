@@ -7,7 +7,7 @@ The Data availabe for the competition can be found [here](https://www.kaggle.com
 Among all the data available I have used only train.csv, test.csv files and I extracted features from the structure.zip (with xyz atoms coordinates for each molecule).
 
 # The problem
-We are asked to predic the coupling of nuclear magnetic moment of pairs of atoms in a set of molecules. More precisely, given the ID of the atoms pair within a certain molecule we need to provide a prediction of the scalar coupling constant.
+We are asked to predict the coupling of nuclear magnetic moment of pairs of atoms in a set of molecules. More precisely, given the ID of the atoms pair within a certain molecule we need to provide a prediction of the scalar coupling constant.
 
 # A bit of domain knowledge
 The coupling between nuclear magnetic moments of two atoms (J-coupling), in the presence of an external magnetic field, depends from atoms features (Z, electronegativity, charge etc) and from environmental features (atoms distance, bonds between atoms, substituent groups atoms are bounded with etc.) For more details check "Understanding NMR Spectroscopy" of James Keeler, one of the reference books for NMR spectroscopy.
